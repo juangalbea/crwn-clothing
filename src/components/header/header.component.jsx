@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
@@ -12,7 +11,7 @@ import Logo from '../../assets/funkylogo.png';
 
 import './header.styles.scss';
 
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink } from './header.styles';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
 
 const Header = ({ currentUser, hidden }) => (
   <HeaderContainer className='header'>
@@ -28,9 +27,9 @@ const Header = ({ currentUser, hidden }) => (
       </OptionLink>
       {
         currentUser ?
-          <OptionDiv className='option' onClick={() => auth.signOut()}>
+          <OptionLink as='div' className='option' onClick={() => auth.signOut()}>
             SIGN OUT
-          </OptionDiv>
+          </OptionLink>
           :
           <OptionLink className='option' to='/signin'>
             SIGN IN
@@ -40,9 +39,9 @@ const Header = ({ currentUser, hidden }) => (
     </OptionsContainer>
     {
       hidden ? null :
-      <CartDropdown />
+        <CartDropdown />
     }
-    
+
   </HeaderContainer>
 );
 
