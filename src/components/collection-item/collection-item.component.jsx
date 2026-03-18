@@ -11,10 +11,12 @@ const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
   return (
     <div className='collection-item'>
-      <div className='image'
-        style={{
-          backgroundImage: `url(${imageUrl})`
-        }}
+      <img
+        className='image'
+        src={imageUrl}
+        alt={name}
+        loading='lazy'
+        decoding='async'
       />
       <div className='collection-footer'>
         <span className='name'>{name}</span>
