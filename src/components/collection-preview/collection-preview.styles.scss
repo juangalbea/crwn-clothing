@@ -11,12 +11,21 @@
     margin-bottom: 20px;
   }
 
+  .title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
   .title {
     margin: 0;
     font-size: clamp(2rem, 3vw, 3rem);
     line-height: 0.95;
     letter-spacing: -0.04em;
     text-transform: uppercase;
+    color: #111111;
+    text-decoration: none;
   }
 
   .item-count {
@@ -25,6 +34,27 @@
     font-weight: 700;
     letter-spacing: 0.16rem;
     text-transform: uppercase;
+  }
+
+  .view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #111111;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::after {
+      content: '->';
+      transition: transform 0.25s ease;
+    }
+
+    &:hover::after {
+      transform: translateX(3px);
+    }
   }
 
   .preview {
