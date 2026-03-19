@@ -27,3 +27,10 @@ export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
 `;
+
+export const OptionAnchor = styled.a`
+  padding: 10px 15px;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+`;

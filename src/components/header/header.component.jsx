@@ -11,7 +11,13 @@ import Logo from '../../assets/funkylogo.png';
 
 import './header.styles.scss';
 
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink,
+  OptionAnchor,
+} from './header.styles';
 
 const Header = ({ currentUser, hidden }) => (
   <HeaderContainer className='header'>
@@ -22,9 +28,9 @@ const Header = ({ currentUser, hidden }) => (
       <OptionLink className='option' to='/shop'>
         SHOP
       </OptionLink>
-      <OptionLink className='option' to='/shop'>
+      <OptionAnchor className='option' href='mailto:juangalbea@gmail.com'>
         CONTACT
-      </OptionLink>
+      </OptionAnchor>
       {
         currentUser ?
           <OptionLink as='div' className='option' onClick={() => auth.signOut()}>
